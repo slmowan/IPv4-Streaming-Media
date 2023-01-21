@@ -1,14 +1,17 @@
 // this is a function who can copy source file to destination.
 // command: ./copy srcfile destfile
 // P8
+// 涉及到的知识点：文件IO，防止内存泄漏
+// 可以使用fprintf函数代替printf函数（属于同一函数族）, 可以指定输出流
 
 #include <stdio.h>
-#include <>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
     if(argc<3) {
         // perror()? //不知道这里可不可以用perror这个函数，好像这里不能用这个函数，到时候看看
-        printf("Usage: %s <src_fole> <dest_file>\n", argv[0]);
+        // printf("Usage: %s <src_fole> <dest_file>\n", argv[0]);
+        fprintf(stderr,"Usage: %s <src_fole> <dest_file>\n", argv[0]);
     }
 
     FILE* src_file;                                         // create a FILE object
