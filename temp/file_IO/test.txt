@@ -1,0 +1,3 @@
+# test file for getline related function
+abcdefgh
+efefef

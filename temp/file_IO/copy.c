@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) { //也可以写出 int main(int argc, char** argv[])
     if(argc<3) {
         // perror()? //不知道这里可不可以用perror这个函数，好像这里不能用这个函数，到时候看看
         // printf("Usage: %s <src_fole> <dest_file>\n", argv[0]);
@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    dest_file = fwrite(argv[2],"w");
+    dest_file = fopen(argv[2],"w");
     if(dest_file==NULL) {
         fclose(src_file);                                   // prevent memory leakage (以后可以用钩子函数优化)
         perror("fopen() fail");
